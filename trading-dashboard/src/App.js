@@ -165,7 +165,7 @@ export default function App() {
 
   const fetchSignal = async () => {
     try {
-      const res = await fetch('http://localhost:8000/signal');
+            const res = await fetch(process.env.REACT_APP_API_URL + '/signal' || 'http://localhost:8000/signal');
       const data = await res.json();
       setSignal(data);
       setPrice(data.price);
